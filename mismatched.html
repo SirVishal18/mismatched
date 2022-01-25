@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MisMatched-Calculate</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}html{height:100vh;width:100vw;}body{background-image: url("./mismatched1.jpg");background-repeat: no-repeat;background-size:cover;background-position: center;}.main{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);height: 80vh;width: 65vw;box-shadow: inset -10px -10px 14px rgb(219, 255, 91), inset 10px 10px 14px rgb(151, 184, 75);border-radius: 50px;animation-name: boxborder;animation-duration: 1s;animation-timing-function: ease-in-out;animation-delay: 1s;animation-iteration-count: infinite;animation-direction: alternate-reverse;}.tittletext{position:relative;top:70px;font-size: 55px;text-align: center;color: #f8ed4e;animation-name: mismatched;animation-duration: 1s;animation-timing-function: ease-in-out;animation-delay: 1s;animation-iteration-count: infinite;animation-direction: alternate-reverse;}.content{position:relative;top:50%;left:50%;transform: translate(-50%, -50%);text-align: center;}.inputarea{position:relative;display: flex;align-items: center;justify-content: center;}.inputarea input{width: 260px;height: 30px;text-align: center;margin: 5px;margin-bottom:0;outline: none;border: 2px solid #d7385c;padding: 20px 40px;font-size: 20px;}.calculate{text-decoration: none;border:none;background-color: #d7385c;color: #fff;height:50px;width:75%;max-width:90%;text-transform: uppercase;font-size: 20px;font-weight: bold;cursor: pointer;margin-top: 50px;border-radius:20px;}.print{display:block;background-color: #f0f878;color: rgb(202, 4, 103);margin:auto;font-size: 22px;height:55px;width:85%;max-width:90%;padding-top: 13px;margin-top: 20px;margin-bottom:20px;}#statement{font-size: 33px;color: #98f7da;}@keyframes mismatched{from{color: #f8ed4e;}to{color: #f560b7;}}@keyframes boxborder{from{box-shadow: inset -10px -10px 14px rgb(248, 42, 156), inset 10px 10px 14px rgb(248, 42, 156);}to{box-shadow: inset -10px -10px 14px rgb(121, 9, 250), inset 10px 10px 14px rgb(121, 9, 250);}}@media screen and (max-width: 991px) {.tittletext{font-size: 40px;transform: translate(0px,20px);}.inputarea input{max-width: 170px;padding: 20px 15px;}a{size: 20px;width: 150px;transform: translate(200px,30px);}}@media screen and (max-width: 875px) {.main{height: 85vh;width: 90vw;}.tittletext{font-size: 35px;}#statement{font-size: 25px;}}@media screen and (max-width: 479px) {.main{padding:20px;}.inputarea input{max-width: 120px;padding: 20px 15px;}.print{font-size:18px;}}
+    </style>
+</head>
+<body background="mismatched1.jpg">
+    <div class="main">
+        <h1 class="tittletext">&#9758; MisMatched &#9756;</h1>
+        <div class="content">
+            <div class="inputarea">
+                <input type="text" placeholder="Your Name.." id="firstname" onfocus="this.value = ''">
+                <input type="text" placeholder="Another Name.." id="secondname" onfocus="this.value = ''">
+            </div>
+            <button class="calculate" onclick="love()">Calculate</button>
+            <spam id="print" class="print">Your Relationship Result are Here!!</spam>
+            <spam id="statement"></spam>
+        </div>
+    </div>
+    <script>
+        function love(){
+        var name1 = document.getElementById("firstname").value;
+        var name2 = document.getElementById("secondname").value;
+        if(name1.length<=3){
+            alert("Enter the name above 3 letter");
+        }
+        if(name2.length<=3){
+            alert("Enter the name above 3 letter");
+        }
+        else{
+            var random = Math.floor(Math.random()*100);
+            document.getElementById("print").innerHTML = name1 + " and " + name2 + "=" +random + "%" + "of love";
+        }
+        if(random<=0 || random<=20){
+            document.getElementById("statement").innerHTML = "&#128514; You are Brother and Sister &#128514;";
+        }
+        else if(random<=21 || random<=50){
+            document.getElementById("statement").innerHTML = "&#128540;You are in the Friend Zone&#128540";
+        }
+        else if(random<=51 || random<=80){
+            document.getElementById("statement").innerHTML = "&#128525;You are in the Best Friend Zone&#128525;";
+        }
+        else if(random<=81 || random<=100){
+            document.getElementById("statement").innerHTML = "&#128151;WoW...Made For Each Other &#128151;";
+        }
+    }
+    </script>
+</body>
+</html>
